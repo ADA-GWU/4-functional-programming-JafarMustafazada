@@ -14,18 +14,18 @@ int CruelifeSelection(int n) {
 		}
 		size = ((size + 1) >> 1);
 
-        if (size < 2) break;
+		if (size < 2) break;
 		for (int i = 0, j = 1; j < size; i++, j += 2) {
 			temp1[i] = move(temp1[j]);
 		}
 		size >>= 1;
 
-        if (size < 3) continue;
+		if (size < 3) continue;
 		for (int i = 0, j = 0, k = 1; j < size; i++, j += 3, k = j + 1) {
 			temp1[i] = move(temp1[j]);
-            if (k < size) temp1[++i] = move(temp1[k]);
+			if (k < size) temp1[++i] = move(temp1[k]);
 		}
-		size -= (size / 3);	
+		size -= (size / 3);
 	}
 
 	size = move(temp1[0]);
